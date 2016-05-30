@@ -3,6 +3,7 @@
   serial: 1
   roles:
     #- common
-    - docker
-    - nginx
-    - node
+    #- docker
+    #- nginx
+    #- node
+    - nginxHost

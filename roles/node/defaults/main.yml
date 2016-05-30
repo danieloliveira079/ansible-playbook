@@ -1,0 +1,13 @@
+ports:
+  - '8080:8080'
+
+directories:
+  - /truckin/src/
+
+files: [
+  {src: 'server.js', dest: '/truckin/src/server.js'},
+  {src: 'package.json', dest: '/truckin/src/package.json'}
+]
+
+volumes:
+  - /truckin/src:/usr/src/app

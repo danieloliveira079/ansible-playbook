@@ -22,4 +22,6 @@
     expose: 8080
     ports: "8080:8080"
     volumes: "{{ volumes }}"
+    env:
+      VIRTUAL_HOST: "{{ ansible_eth1.ipv4.address }}"
   tags: [nodejs]

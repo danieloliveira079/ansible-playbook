@@ -8,7 +8,7 @@
 
 - name: Container is running
   docker:
-    image: nginx:alpine
+    image: jwilder/nginx-proxy
     name: nginx
     state: running
     ports: "{{ ports }}"
@@ -27,17 +27,4 @@
     log_opt:
       syslog-tag: nginx
   when: log_to_syslog is defined
-  tags: [nginx]
-
-- name: Files are present
-  copy:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
-  with_items: files
-  register: result
-  tags: [nginx]
-
-- name: Container is reloaded
-  shell: docker kill -s HUP nginx
-  when: result|changed
   tags: [nginx]

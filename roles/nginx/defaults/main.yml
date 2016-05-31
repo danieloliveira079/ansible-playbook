@@ -8,12 +8,9 @@ directories:
   - /data/nginx/upstreams
   - /data/nginx/templates
 
-files: [
-  {src: 'services.conf', dest: '/data/nginx/conf.d/services.conf'}
-]
-
 volumes:
   - /data/nginx/conf.d:/etc/nginx/conf.d
   - /data/nginx/includes:/etc/nginx/includes
   - /data/nginx/upstreams:/etc/nginx/upstreams
   - /data/nginx/sites-enabled:/etc/nginx/sites-enabled
+  - /var/run/docker.sock:/tmp/docker.sock:ro

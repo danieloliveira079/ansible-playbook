@@ -16,9 +16,10 @@
 
 - name: Container is running
   docker:
-    image: nginx
+    image: node:4-onbuild
     name: nodejs
     state: reloaded
-    ports: "{{ ports }}"
+    expose: 8080
+    ports: "8080:8080"
     volumes: "{{ volumes }}"
   tags: [nodejs]

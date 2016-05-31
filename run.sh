@@ -12,4 +12,5 @@ docker run -it --rm --name operator \
            -v $PWD:$root_folder \
            -v $HOME/.ssh:/root/.ssh \
            -w $workdir \
-           --net="host" ansible/ubuntu14.04-ansible
+           --net="host" williamyeh/ansible:ubuntu14.04 bash
+           #ansible/ubuntu14.04-ansible
